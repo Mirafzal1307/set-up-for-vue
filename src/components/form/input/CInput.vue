@@ -12,35 +12,38 @@
 <script setup>
 import { defineProps, ref } from 'vue'
 
-let { modelValue, type, placeholder, id } = defineProps([
-  'modelValue',
-  'type',
-  'id',
-  'placeholder',
-  'isValid'
-])
-
+// eslint-disable-next-line no-unused-vars
 const props = defineProps({
   modelValue: {
     type: String,
     default: ''
-  }
+  },
+  type: {
+    type: String,
+    default: 'text'
+  },
+  id: {
+    type: String,
+    default: ''
+  },
+  placeholder: {
+    type: String,
+    default: ''
+  },
+
 })
 
+// eslint-disable-next-line vue/valid-define-emits
 const emit = defineEmits()
 
 const updateModelValue = (event) => {
-  if (typeof modelValue === 'string') {
-    console.log(modelValue)
-    const refModelValue = ref(modelValue)
-
-    emit('update:modelValue', refModelValue.value)
-
-    modelValue = refModelValue
+  if (typeof props.modelValue === 'string') {
+    console.log(props.modelValue);
+    const refModelValue = ref(props.modelValue);
+    emit('update:modelValue', refModelValue.value);
   }
 
-  modelValue.value = event.target.value
-
-  emit('update:modelValue', modelValue.value)
+  // Don't directly assign to props, emit an event instead
+  emit('update:modelValue', event.target.value);
 }
 </script>
