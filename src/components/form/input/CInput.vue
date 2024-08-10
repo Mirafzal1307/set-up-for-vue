@@ -1,6 +1,6 @@
 <template>
   <input
-    class=""
+    class="border border-white p-2 rounded "
     :value="modelValue"
     @input="updateModelValue"
     :type="type"

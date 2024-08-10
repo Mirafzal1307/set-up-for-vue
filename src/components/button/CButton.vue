@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button :class="[ bgColor, textColor ]" class="rounded-md  py-2 px-6  " >button</button>
+    <button :class="[bgColor, textColor]" class="rounded-md w-full py-2 hover:opacity-85 ">{{ textValue }}</button>
     <slot></slot>
   </div>
 </template>
@@ -15,6 +15,10 @@ const props = defineProps({
   textColor: {
     type: String,
     default: 'text-white'
+  },
+  textValue: {
+    type: String,
+    default: ''
   }
 })
 </script>
