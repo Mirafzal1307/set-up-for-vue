@@ -10,7 +10,7 @@
         <option
           v-for="option in options"
           :key="option.value"
-          :value="option.value"
+          :value="option.text"
           class="text-gray-700"
         >
           {{ option.text }}

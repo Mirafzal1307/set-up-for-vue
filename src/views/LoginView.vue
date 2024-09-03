@@ -9,21 +9,18 @@
           <h1 class="text-center text-xl text-white font-black">Lincoln University Collage</h1>
           <span class="text-center text-white font-bold"> Offer letter </span>
         </div>
-
         <CInput
           type="text"
           placeholder="Login"
           v-model="form.email"
           id="projectDescription"
         />
-
         <CInput
           type="text"
           placeholder="Password"
           v-model="form.password"
           id="projectDescription"
         />
-
         <CButton
           class=""
           bg-color="bg-primary"
@@ -49,14 +46,10 @@ const userCredentials = ref({
   password: ''
 })
 
-
-
-
 const { userLogin } = useUserStore()
 const userStore = useUserStore()
 const { loading } = storeToRefs(userStore)
 // const isPasswordVisible = ref(false)
-
 
 const form = ref({
   email: '',
@@ -77,7 +70,6 @@ const submit = async () => {
 }
 
 console.log(form)
+console.log(userCredentials);
 
-
-console.log(userCredentials)
 </script>
